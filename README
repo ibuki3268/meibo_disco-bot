@@ -1,12 +1,12 @@
 # Discord 自己紹介Bot セットアップ手順
 
-## 1. Python環境の準備
+## 1.Python環境の準備
 
 ```
 pip install -r requirements.txt
 ```
 
-## 2. Discord Developer PortalでBotを作る
+## 2.Discord Developer PortalでBotを作る
 
 1. https://discord.com/developers/applications にアクセス
 2. 「New Application」→ 名前つけて作成
@@ -21,7 +21,7 @@ pip install -r requirements.txt
 3. BOT PERMISSIONS: `Send Messages`, `Read Message History`, `Add Reactions` にチェック
 4. 生成されたURLをブラウザで開いてサーバーに追加
 
-## 4. チャンネル名の確認
+## 4.チャンネル名の確認
 
 `bot.py` の5行目
 ```python
@@ -29,7 +29,7 @@ CHANNEL_NAME = "自己紹介"
 ```
 実際のチャンネル名と一致させる（スペース・大文字小文字も一致）
 
-## 5. 起動
+## 5.起動
 
 ```
 python bot.py
@@ -51,10 +51,8 @@ python bot.py
 
 ## ファイル構成
 
-```
 discord_bot/
-├── bot.py           # メインコード
-├── .env             # トークン（他人に見せない）
+├── bot.py            メインコード
+├── .env              トークン（他人に見せない）
 ├── requirements.txt
-└── 自己紹介.xlsx    # 起動後に自動生成
-```
+└── 自己紹介.xlsx    起動後に自動生成
