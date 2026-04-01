@@ -1,0 +1,60 @@
+# Discord 自己紹介Bot セットアップ手順
+
+## 1. Python環境の準備
+
+```
+pip install -r requirements.txt
+```
+
+## 2. Discord Developer PortalでBotを作る
+
+1. https://discord.com/developers/applications にアクセス
+2. 「New Application」→ 名前つけて作成
+3. 左メニュー「Bot」→「Add Bot」
+4. **TOKEN** をコピー → `.env` の `DISCORD_TOKEN=` の後ろに貼る
+5. 「Privileged Gateway Intents」で **MESSAGE CONTENT INTENT** をONにする（重要）
+
+## 3. BotをサーバーにINVITEする
+
+1. 左メニュー「OAuth2」→「URL Generator」
+2. SCOPES: `bot` にチェック
+3. BOT PERMISSIONS: `Send Messages`, `Read Message History`, `Add Reactions` にチェック
+4. 生成されたURLをブラウザで開いてサーバーに追加
+
+## 4. チャンネル名の確認
+
+`bot.py` の5行目
+```python
+CHANNEL_NAME = "自己紹介"
+```
+実際のチャンネル名と一致させる（スペース・大文字小文字も一致）
+
+## 5. 起動
+
+```
+python bot.py
+```
+
+起動したら `自己紹介.xlsx` が自動作成される。
+自己紹介が投稿されるたびに1行追記され、BotがReaction ✅ をつける。
+
+## テンプレート（このフォーマットで投稿すればOK）
+
+```
+○本名： 田中太郎
+○学籍番号： 12345678
+○SNSアカウント： @taro
+○好きなゲーム： マイクラ
+○じょぎでやりたいこと： 色々
+○ひとこと: よろしく！
+```
+
+## ファイル構成
+
+```
+discord_bot/
+├── bot.py           # メインコード
+├── .env             # トークン（他人に見せない）
+├── requirements.txt
+└── 自己紹介.xlsx    # 起動後に自動生成
+```
