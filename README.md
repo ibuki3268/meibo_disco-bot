@@ -51,8 +51,10 @@ python bot.py
 
 ## ファイル構成
 
+```
 discord_bot/
-├── bot.py            メインコード
-├── .env              トークン（他人に見せない）
+├── bot.py           # メインコード
+├── .env             # トークン（他人に見せない）
 ├── requirements.txt
-└── 自己紹介.xlsx    起動後に自動生成
+└── 自己紹介.xlsx    # 起動後に自動生成
+```
